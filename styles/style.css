@@ -1,28 +1,46 @@
 /* global */
-html{height: 100%;}
+html
+{
+  height: 100%;
+}
 
 body
-{ font-family: verdana, arial, sans-serif;
+{ 
+  font-family: verdana, arial, sans-serif;
   padding: 0px;
   margin: 0px;
   font-size: .68em;
 }
 
 p
-{ margin: 0px;
+{ 
+  margin: 0px;
   padding: 0px 0px 16px 0px;
   line-height: 1.7em;
 }
 
 h1
-{ font-family: arial, sans-serif;
+{ 
+  font-family: arial, sans-serif;
   letter-spacing: .1em;
   font-weight: normal;
   text-transform: uppercase;
   padding: 16px 0px 5px 0px; 
   margin: 0px 0px 12px 0px; 
   border-bottom: 1px solid;
-  font-size: 150%;
+  font-size: 3em;
+}
+
+h3
+{
+  font-family: arial, sans-serif;
+  letter-spacing: .1em;
+  font-weight: normal;
+  text-transform: uppercase;
+  padding: 16px 0px 5px 0px; 
+  margin: 0px 0px 12px 0px; 
+  border-bottom: 1px solid;
+  font-size: 1.2em;
 }
 
 .sub
@@ -129,8 +147,9 @@ blockquote{border-color: #40403E;}
 }
 
 #menu li a, .side_menu_item a
-{ background: #8c8c8b;
-  color: #929280;
+{ 
+  background: #8c8c8b;
+  color: #210025;
   border-color: #2C2C2A;
 }
 

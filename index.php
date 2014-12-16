@@ -28,7 +28,7 @@
 		</div>
 	</div>
 	<div id="content">
-		<h1>Series_One Photographs (01.01.2007)<span class="sub">[hover over thumbnails to view]</span></h1>
+		<h3>Series_One Photographs (01.01.2007)<span class="sub">[hover over thumbnails to view]</span></h3>
 		<div id="gallery">
 			<div id="thumbs">
 				<a href="#nogo">
