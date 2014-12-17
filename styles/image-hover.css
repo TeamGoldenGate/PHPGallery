@@ -30,25 +30,25 @@
 
 #thumbs a:hover 
 {
-border-color: #ddd;
+    border-color: #ddd;
 }
 #firstpic {
     position: absolute;
-    width: auto;
-    height: auto;
+    width: auto !important;
+    height: auto !important;
     right: 196px;
     top: 8px;
     padding: 2px;
-    border: 2px solid #40403E;
+    border: 2px solid #40403E !important;
 }
 
 #thumbs a:hover img 
 { 
-  position: absolute; 
-  width: auto; 
-  height: auto; 
-  right: 196px; 
-  top: 8px; 
+  position: absolute;
+  width: auto;
+  height: auto;
+  right: 196px;
+  top: 8px;
   padding: 2px;
   border: 2px solid #40403E;
 }

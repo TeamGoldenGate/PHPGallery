@@ -33,11 +33,15 @@ require_once "header.php";
 	</div>
 	<div id="content">
 		<h3>Christmas party<span class="sub">2014</span></h3>
+
 		<div id="gallery">
+            <a href="#nogo">
+                <img src="images/ChristmasPary2014.JPG" alt="" id="firstpic" />
+            </a>
 			<div id="thumbs">
-				<a href="#nogo">
-					<img src="images/ChristmasPary2014.JPG" alt="" id="firstpic" />
-				</a>
+                <a href="#nogo">
+                    <img src="images/ChristmasPary2014.JPG" alt="" />
+                </a>
 				<a href="#nogo">
 					<img src="images/ChristmasPary2014_1.JPG" alt="" />
 				</a>
