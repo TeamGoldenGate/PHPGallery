@@ -6,7 +6,7 @@ $dbpass = "";
 $dbname = "ourdatabase";
 $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 if (!$conn) {
-    die('Could not connect: ' . mysqli_error());
+    die('Could not connect: ' . mysqli_error() );
 }
 echo 'Connected successfully';
 

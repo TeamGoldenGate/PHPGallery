@@ -1,3 +1,4 @@
+<? require_once("includes/application_top.php"); ?>
 <!DOCTYPE html>
 <html>
 <head>
