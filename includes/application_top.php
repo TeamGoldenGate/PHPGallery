@@ -1,9 +1,9 @@
 <?php
 //Database connection
-$dbhost = "localhost:3306";
-$dbuser = "root";
-$dbpass = "";
-$dbname = "ourdatabase";
+$dbhost = "db4free.net";
+$dbuser = "adminteamwork";
+$dbpass = "password";
+$dbname = "phpteamwork";
 $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 if (!$conn) {
     die('Could not connect: ' . mysqli_error() );
