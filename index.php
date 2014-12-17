@@ -1,5 +1,5 @@
 <?php
-include "includes/application_top.php";
+include "includes/database.php";
 require_once "header.php";
 
 ?>

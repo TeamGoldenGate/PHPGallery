@@ -1,5 +1,5 @@
 <?php
-include("application_top.php");
+include("database.php");
 
 if (!empty($_POST['register-submit'])) {
     $username = $_POST['username'];
@@ -8,14 +8,23 @@ if (!empty($_POST['register-submit'])) {
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
 
-    $sql = "INSERT INTO `users`(`user_name`, `password`, `user_email`, `user_fname`, `user_lname`)
-VALUES ($username, $password, $email, $fname, $lname)";
+	$querry = "SELECT `user_name`, `password` FROM `users` WHERE `user_name`='$username' AND `password`='$password'";
+	$result = $conn->query($querry);
+	
+	if (!$result) {	
+		$sql = "INSERT INTO `users`(`user_name`, `password`, `user_email`, `user_fname`, `user_lname`) VALUES ('$username', '$password', '$email', '$fname', '$lname')";
 
-    if (mysqli_query($conn, $sql)) {
-        echo "New record created successfully";
-    } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    }
+		if ($conn->query($sql)) {
+			echo "New record created successfully";
+		} else {
+			echo "Error: " . $sql . "<br>" . $conn->errorInfo;
+		}
+	}
+	else {
+		echo "That username already exists. <br>";
+		echo "You will be redirected after 3 seconds.";
+		header("Refresh: 3; URL=./../register.php");
+	}
 }
 
-include("application_bottom.php");
+?>
