@@ -39,10 +39,11 @@ require_once "header.php";
   </div>
     <?php
 
-	 if (isset($_POST['galleryname'], $_POST['category'])){
+	 if (isset($_POST['galleryname'], $_POST['category']) && $_POST['galleryname'] != "" && $_POST['category'] != ""){
          $galleryName = htmlentities($_POST['galleryname']);
          $category = htmlentities($_POST['category']);
          $uploaddir = './images/';
+         $sql_pic = "INSERT INTO `phpteamwork`.`albums` ( `name`, `rating`, `category`) VALUES ('$galleryName', '0', '$category')";
         for($i=0; $i<count($_FILES['picture']['name']); $i++) {
             $tmpFilePath = $_FILES['picture']['tmp_name'][$i];
             if ($tmpFilePath != "") {
@@ -55,7 +56,7 @@ require_once "header.php";
             }
         }
 
-		 $sql = "INSERT INTO `phpteamwork`.`albums` ( `name`, `rating`, `category`) VALUES ('$galleryName', '0', '$category')";
+		 $sql = "INSERT INTO `phpteamwork`.`albums` ( `name`, `rating`, `category`, `user_id`) VALUES ('$galleryName', '0', '$category', '1')";
 
 	     if (mysqli_query($conn, $sql)) {
 	         echo "New record created successfully";
