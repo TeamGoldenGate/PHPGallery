@@ -264,3 +264,30 @@ blockquote{border-color: #40403E;}
   color: #929280;
   border-color: #40403E;
 }
+
+#contact input[name="galleryname"], #contact select[name="category"], input[name="picture"]
+{
+	border: 2px solid black;
+	margin-left: 20px;
+}
+
+#contact input[name="galleryname"]
+{
+	width: 190px;	
+}
+
+#contact input[name="picture"]
+{
+	margin-left: 30px;
+	width: 190px;
+}
+
+#contact .row1
+{
+	margin-top: 14px;
+}
+
+#contact input[type="submit"]
+{
+	margin-top: 230px;	
+}
