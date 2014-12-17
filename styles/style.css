@@ -291,3 +291,10 @@ blockquote{border-color: #40403E;}
 {
 	margin-top: 230px;	
 }
+
+.newPicture {
+    max-width: 20%;
+}
+.newPicture img {
+    max-width: 100%;
+}

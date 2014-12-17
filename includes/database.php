@@ -5,6 +5,7 @@ $dbuser = "adminteamwork";
 $dbpass = "password";
 $dbname = "phpteamwork";
 
+
 $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 if (!$conn) {
     die('Could not connect: ' . mysqli_error() );

@@ -3,7 +3,7 @@ if(!empty($_COOKIE["loggedUser"]))
 {
 	echo "You are already logged in. <br>";
 	echo "You will be redirected after 3 seconds.";
-	header("Refresh: 3; URL=./newIndex.php");
+	header("Refresh: 3; URL=./index.php");
 	die();
 }
 ?>

@@ -1,73 +1,35 @@
-<?php
-include "includes/database.php";
-require_once "header.php";
-
+<?php require_once "header.php";
 ?>
-
-	<div id="content">
-		<h3>Christmas party<span class="sub">2014</span></h3>
-
-		<div id="gallery">
-            <a href="#nogo">
-                <img src="images/ChristmasPary2014.JPG" alt="" id="firstpic" />
-            </a>
-			<div id="thumbs">
-                <a href="#nogo">
-                    <img src="images/ChristmasPary2014.JPG" alt="" />
-                </a>
-				<a href="#nogo">
-					<img src="images/ChristmasPary2014_1.JPG" alt="" />
-				</a>
-				<a href="#nogo">
-					<img src="images/sea_1.jpg" alt="" />
-				</a>
-				<a href="#nogo">
-					<img src="images/sea_2.jpg" alt="" />
-				</a>
-				<a href="#nogo">
-					<img src="images/sea_1.jpg" alt="" />
-				</a>
-				<a href="#nogo">
-					<img src="images/sea_2.jpg" alt="" />
-				</a>
-				<a href="#nogo">
-					<img src="images/sea_1.jpg" alt="" />
-				</a>
-				<a href="#nogo">
-					<img src="images/sea_2.jpg" alt="" />
-				</a>
-				<a href="#nogo">
-					<img src="images/sea_1.jpg" alt="" />
-				</a>
-				<a href="#nogo">
-					<img src="images/sea_2.jpg" alt="" />
-				</a>
-				<a href="#nogo">
-					<img src="images/sea_1.jpg" alt="" />
-				</a>
-				<a href="#nogo">
-					<img src="images/sea_2.jpg" alt="" />
-				</a>
-				<a href="#nogo">
-					<img src="images/sea_1.jpg" alt="" />
-				</a>
-				<a href="#nogo">
-					<img src="images/sea_2.jpg" alt="" />
-				</a>
-				<a href="#nogo">
-					<img src="images/sea_1.jpg" alt="" />
-				</a>
-				<a href="#nogo">
-					<img src="images/sea_2.jpg" alt="" />
-				</a>
-				<a href="#nogo">
-					<img src="images/sea_1.jpg" alt="" />
-				</a>
-				<a href="#nogo">
-					<img src="images/sea_2.jpg" alt="" />
-				</a>
-			</div>
-		</div>
-	</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="scripts/slider.js" defer></script>
+<div id="slider">
+	<ul class="slides">
+		<?php
+			$fi = new FilesystemIterator("./images/");
+			$counter = 1;
+			foreach($fi as $file) {
+		?>
+		<li class="slide slide<?php $counter++; ?>"><img src="<?= $file->getPathname(); ?>"></li>
+		<?php } if($counter > 1) { $fi->rewind(); } ?>
+		<li class="slide slide1"><img src="<?php echo $fi->key(); ?>"></li>
+	</ul>
 </div>
-<?php require_once "footer.php"?>
+<section id="newPhotos">
+    <?php
+    $picturesQuery = "SELECT `picture_id`, `name`, `album_id`, `user_id` FROM `pictures` ORDER BY `picture_id` DESC LIMIT 6";
+    $result = $conn->query($picturesQuery);
+    if ($result) {
+        while($row = $result->fetch_assoc()) {
+        ?>
+        <div class="newPicture">
+            <h2><?php echo $row['name']; ?></h2>
+            <img src="<?php echo $row['name']; ?>" alt="picture<?php echo $row['picture_id']; ?>" />
+            <span class="uploadedBy"><?php echo $row['user_id']; ?></span>
+        </div>
+        <?php
+        }
+    }
+    ?>
+</section>
+
+<?php require_once "footer.php";?>

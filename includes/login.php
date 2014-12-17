@@ -14,10 +14,12 @@ if(!empty($_POST["login-submit"]) &&
 	if ($result) {
 		$row = $result->fetch_assoc();
 		$username = $row["user_name"];
+        $userId = $row["user_id"];
 		setcookie("currentUser", $username, time() + (86400 * 30), "/"); // 1 day
+        setcookie("currentUserId", $userId, time() + (86400 * 30), "/"); // 1 day
 		setcookie("loggedUser", true, time() + (86400 * 30), "/"); // 1 day
 		echo "You will be redirected after 3 seconds.";
-		header("Refresh: 3; URL=./../newIndex.php");
+		header("Refresh: 3; URL=./../index.php");
 		die();
 	} else {
 		echo "Login failed <br>";
@@ -29,10 +31,12 @@ else
 {
 	unset($_COOKIE["currentUser"]);
 	setcookie("currentUser", null, -1, '/');
+    unset($_COOKIE["currentUserId"]);
+    setcookie("currentUserId", null, -1, '/');
 	unset($_COOKIE["loggedUser"]);
 	setcookie("loggedUser", null, -1, '/');
 	echo "You will be redirected after 3 seconds.";
-	header("Refresh: 3; URL=./../newIndex.php");
+	header("Refresh: 3; URL=./../index.php");
 	die();
 }
 ?>
