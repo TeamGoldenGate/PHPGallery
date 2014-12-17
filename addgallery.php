@@ -42,24 +42,31 @@ require_once "header.php";
 	 if (isset($_POST['galleryname'], $_POST['category']) && $_POST['galleryname'] != "" && $_POST['category'] != ""){
          $galleryName = htmlentities($_POST['galleryname']);
          $category = htmlentities($_POST['category']);
-         $uploaddir = './images/';
-         $sql_pic = "INSERT INTO `phpteamwork`.`albums` ( `name`, `rating`, `category`) VALUES ('$galleryName', '0', '$category')";
-        for($i=0; $i<count($_FILES['picture']['name']); $i++) {
-            $tmpFilePath = $_FILES['picture']['tmp_name'][$i];
-            if ($tmpFilePath != "") {
-                $uploadfile = $uploaddir . basename($_FILES['picture']['name'][$i]);
-                if (move_uploaded_file($tmpFilePath, $uploadfile)) {
-                    echo "File is valid, and was successfully uploaded.\n";
-                } else {
-                    echo "Possible file upload attack!\n";
-                }
-            }
-        }
 
 		 $sql = "INSERT INTO `phpteamwork`.`albums` ( `name`, `rating`, `category`, `user_id`) VALUES ('$galleryName', '0', '$category', '1')";
-
+         $albumId = mysqli_query($conn, "SELECT MAX(`id`) FROM `phpteamwork`.`albums`");
 	     if (mysqli_query($conn, $sql)) {
 	         echo "New record created successfully";
+             $albumId = mysqli_insert_id($conn);
+             $uploaddir = './images/';
+             for($i=0; $i<count($_FILES['picture']['name']); $i++) {
+                 $tmpFilePath = $_FILES['picture']['tmp_name'][$i];
+                 if ($tmpFilePath != "") {
+                     $uploadfile = $uploaddir . basename($_FILES['picture']['name'][$i]);
+                     if (move_uploaded_file($tmpFilePath, $uploadfile)) {
+                         $sql = "INSERT INTO `phpteamwork`.`pictures` ( `name`, `album_id`, `user_id`) VALUES ('$uploadfile', '$albumId', '2')";
+                         if (mysqli_query($conn, $sql)) {
+                             echo "New record created successfully";
+                         }
+                         else {
+                             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                         }
+                         echo "File is valid, and was successfully uploaded.\n";
+                     } else {
+                         echo "Possible file upload attack!\n";
+                     }
+                 }
+             }
 	     } else {
 	         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 	     }
