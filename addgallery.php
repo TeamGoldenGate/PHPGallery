@@ -1,7 +1,6 @@
 <?php
 include "includes/application_top.php";
 require_once "header.php";
-
 ?>
   <div id="content">
     <h1>Gallery</h1>
@@ -38,31 +37,9 @@ require_once "header.php";
     </form>
   </div>
     <?php
-
-<<<<<<< HEAD
-//	 if (isset($_POST['galleryname'], $_POST['category'])){
-//         $galleryName = htmlentities($_POST['galleryname']);
-//         $category = htmlentities($_POST['category']);
-//         $uploaddir = './images/';
-//         $uploadfile = $uploaddir . basename($_FILES['picture']['name']);
-//         if (move_uploaded_file($_FILES['picture']['tmp_name'], $uploadfile)) {
-//             echo "File is valid, and was successfully uploaded.\n";
-//         } else {
-//             echo "Possible file upload attack!\n";
-//         }
-//		 $sql = "INSERT INTO `ourdatabase`.`albums` ( `name`, `rating`, `category`) VALUES ('$galleryName', '0', '$category')";
-//
-//	     if (mysqli_query($conn, $sql)) {
-//	         echo "New record created successfully";
-//	     } else {
-//	         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-//	     }
-//	 }
-=======
 	 if (isset($_POST['galleryname'], $_POST['category']) && $_POST['galleryname'] != "" && $_POST['category'] != ""){
          $galleryName = htmlentities($_POST['galleryname']);
          $category = htmlentities($_POST['category']);
-
 		 $sql = "INSERT INTO `phpteamwork`.`albums` ( `name`, `rating`, `category`, `user_id`) VALUES ('$galleryName', '0', '$category', '1')";
          $albumId = mysqli_query($conn, "SELECT MAX(`id`) FROM `phpteamwork`.`albums`");
 	     if (mysqli_query($conn, $sql)) {
@@ -91,38 +68,6 @@ require_once "header.php";
 	         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 	     }
 	 }
->>>>>>> 9724aff96ae59467a3070a7d35d75cde1ae42a4a
    ?>
 </div>
 <?php require_once "footer.php"?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
