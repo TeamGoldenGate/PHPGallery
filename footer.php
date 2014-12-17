@@ -9,3 +9,5 @@
 	<div id="links">design by <a href="https://github.com/TeamGoldenGate/PHPGallery">Team "Golden Gate" </a>
 </body>
 </html>
+<?php
+include("includes/application_bottom.php");

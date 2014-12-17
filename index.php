@@ -1,4 +1,8 @@
-<?php require_once "header.html"?>
+<?php
+include "includes/application_top.php";
+require_once "header.php";
+
+?>
 <div id="site_content">
 	<div id="side_menu">
 		<div class="side_menu_item">
@@ -89,4 +93,4 @@
 		</div>
 	</div>
 </div>
-<?php require_once "footer.html"?>
+<?php require_once "footer.php"?>
