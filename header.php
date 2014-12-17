@@ -13,11 +13,11 @@
 	</div>
 	<nav id="menu">
 		<ul>
-			<li><a class="selected" href="#">Gallery</a>
+			<li><a class="selected" href="index.php">Gallery</a>
 			</li>
-			<li><a href="#">menu item 2</a>
+			<li><a href="#">Upload Picture</a>
 			</li>
-			<li><a href="#">menu item 3</a>
+			<li><a href="addgallery.php">Add Gallery</a>
 			</li>
 		</ul>
 	</nav>
