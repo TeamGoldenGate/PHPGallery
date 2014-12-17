@@ -36,10 +36,10 @@ require_once "header.php";
 		<div id="gallery">
 			<div id="thumbs">
 				<a href="#nogo">
-					<img src="images/ChristmasPary2014.JPG" alt="" />
+					<img src="images/ChristmasPary2014.JPG" alt="" id="firstpic" />
 				</a>
 				<a href="#nogo">
-					<img src="images/sea_2.jpg" alt="" />
+					<img src="images/ChristmasPary2014_1.JPG" alt="" />
 				</a>
 				<a href="#nogo">
 					<img src="images/sea_1.jpg" alt="" />

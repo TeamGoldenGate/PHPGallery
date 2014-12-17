@@ -32,6 +32,15 @@
 {
 border-color: #ddd;
 }
+#firstpic {
+    position: absolute;
+    width: auto;
+    height: auto;
+    right: 196px;
+    top: 8px;
+    padding: 2px;
+    border: 2px solid #40403E;
+}
 
 #thumbs a:hover img 
 { 
