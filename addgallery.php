@@ -3,15 +3,6 @@ include "includes/application_top.php";
 require_once "header.php";
 
 ?>
-
-<div id="site_content">
-  <div id="side_menu">
-    <div class="side_menu_item"> <a href="#"><img src="style/series_one.jpg" alt="" width="142" height="50" /></a> <span class="info">Series_One</span> </div>
-    <div class="side_menu_item"> <a href="#"><img src="style/series_two.jpg" alt="" width="142" height="50" /></a> <span class="info">Series_Two</span> </div>
-    <div class="side_menu_item"> <a href="#"><img src="style/series_three.jpg" alt="" width="142" height="50" /></a> <span class="info">Series_Three</span> </div>
-    <div class="side_menu_item"> <a href="#"><img src="style/series_four.jpg" alt="" width="142" height="50" /></a> <span class="info">Series_Four</span> </div>
-    <div class="side_menu_item"> <a href="#"><img src="style/series_five.jpg" alt="" width="142" height="50" /></a> <span class="info">Series_Five</span> </div>
-  </div>
   <div id="content">
     <h1>Gallery</h1>
     <p>Add gallery</p>

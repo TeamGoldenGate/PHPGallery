@@ -22,4 +22,5 @@
 		</ul>
 	</nav>
 </body>
-</html>
+<div id="site_content">
+    <?php include "gallery.php"; ?>
