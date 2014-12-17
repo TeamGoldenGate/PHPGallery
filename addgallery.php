@@ -35,18 +35,18 @@ require_once "header.php";
         </span> </div>
     </form>
   </div>
-  <?php 
-  	require_once 'NewGallery.php';
-	include("application_top.php");
+  // <?php 
+  	// require_once 'NewGallery.php';
+	// include("application_top.php");
 	// if (isset(htmlentities($_POST['picture']), htmlentities($_POST['submit'])
-		 // $sql = "INSERT INTO `ourdatabase`.`albums` (`id`, `name`, `rating`, `category`) VALUES (NULL, $_POST['name'], '1', $_POST['category'])"
+		// $sql = "INSERT INTO `ourdatabase`.`albums` (`id`, `name`, `rating`, `category`) VALUES (NULL, $_POST['name'], '1', $_POST['category'])"
 	    // if (mysqli_query($conn, $sql)) {
 	        // echo "New record created successfully";
 	    // } else {
 	        // echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 	    // }
 	// }
-	include("application_bottom");
-  ?>
+	// include("application_bottom");
+  // ?>
 </div>
 <?php require_once "footer.php"?>
