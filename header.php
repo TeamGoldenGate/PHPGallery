@@ -8,6 +8,7 @@ require_once("includes/functions.php");
 	<title>Golden Gate Gallery</title>
 	<link rel="stylesheet" href="styles/style.css">
 	<link rel="stylesheet" href="styles/newStyle.css">
+    <script src="scripts/addpic.js" defer></script>
 </head>
 
 <body>

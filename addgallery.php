@@ -21,12 +21,21 @@ if (isset($_COOKIE['loggedUser'])) {
               </select>
           </span>
       </div>
-      <div class="row1">
-              <span class="formlabel">Add picture</span>
+        <div class="row1">
+            <span class="formlabel">Add picture</span>
               <span id="forminput">
-                  <input type="file" name="picture[]" multiple="multiple" value="" />
+                  <input type="button" name="add" value="+" id="add" onClick="addClone('addpic')">
               </span>
-      </div>
+        </div>
+        <div class="row1" id="addpic">
+            <!--              <div id="newpic">-->
+            <!--                  <input type="text" name="picturename[]" placeholder="Picture Name"/>-->
+            <!--                  <input type="file" name="picture[]" id="uploadImage"  onchange="PreviewImage(this);"/>-->
+            <!--                  <a href="#nogo">-->
+            <!--                      <img src="" id="uploadPreview" onClick="removeClone(this, 'newpic', 'addpic')"/>-->
+            <!--                  </a>-->
+            <!--              </div>-->
+        </div>
 
       <div class="row1">
           <span class="formlabel"></span>
