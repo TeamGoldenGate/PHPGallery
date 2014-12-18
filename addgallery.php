@@ -4,9 +4,8 @@ if (isset($_COOKIE['loggedUser'])) {
     $user_id = (int)$_COOKIE['currentUserId'];
     ?>
     <div id="content">
-        <h1>Gallery</h1>
+        <h1>MAKE YOUR Gallery</h1>
         <p>Add gallery</p>
-        <p></p>
         <form id="contact" method="post" action="addgallery.php" enctype="multipart/form-data">
             <div class="row1">
                 <span class="formlabel">Gallery name</span>

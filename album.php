@@ -26,7 +26,7 @@ if (isset($_GET['album_id'])) {
                     $picture_id = $row['picture_id'];
                     ?>
                     <div class="picture">
-                        <h2><?php echo $picture_name; ?></h2>
+                        <h2><?php echo $picture_name; ?></h2> 
                         <img src="<?php echo $picture_name; ?>" alt="picture<?php echo $picture_id; ?>" />
                         <p>
                             <span class="uploadedBy">Uploaded by: <strong><?php echo getAuthor($picture_id); ?></strong></span>

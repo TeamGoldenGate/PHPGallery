@@ -1,8 +1,8 @@
 <?php
 //Database connection
-$dbhost = "db4free.net";
-$dbuser = "adminteamwork";
-$dbpass = "password";
+$dbhost = "localhost:3306";
+$dbuser = "root";
+$dbpass = "";
 $dbname = "phpteamwork";
 
 

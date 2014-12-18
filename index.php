@@ -16,13 +16,13 @@
 </div>
 <section id="newPhotos">
     <?php
-    $picturesQuery = "SELECT `picture_id`, `name`, `album_id`, `user_id` FROM `pictures` ORDER BY `picture_id` DESC LIMIT 6";
+    $picturesQuery = "SELECT `picture_id`, `name`, `picturename`, `album_id`, `user_id` FROM `pictures` ORDER BY `picture_id` DESC";// LIMIT 6";
     $result = $conn->query($picturesQuery);
     if ($result) {
         while($row = $result->fetch_assoc()) {
         ?>
         <div class="newPicture">
-            <h2><?php echo $row['name']; ?></h2>
+            <h2><?php echo $row['picturename']; ?></h2>
             <img src="<?php echo $row['name']; ?>" alt="picture<?php echo $row['picture_id']; ?>" />
             <p>
                 <span class="uploadedBy">Uploaded by: <strong><?php echo getAuthor($row['picture_id']); ?></strong></span>

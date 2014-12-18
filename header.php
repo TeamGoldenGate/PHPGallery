@@ -14,7 +14,6 @@ require_once("includes/functions.php");
 <body>
 	<div id="logo">
 		<h1>Golden Gate Gallery</h1>
-		</div>
 	</div>
 	<nav id="menu">
 		<ul>
