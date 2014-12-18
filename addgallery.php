@@ -76,7 +76,7 @@ VALUES ('$galleryName', '0', '$category', '$user_id')";
     } else {
     ?>
     <div>
-        Before upploading photos please 
+        Before upploading photos please
         <span><a href="login.php">Login</a> or <a href="register.php">Register</a></span>
     </div>
     <?php

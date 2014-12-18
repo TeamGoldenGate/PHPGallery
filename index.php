@@ -24,7 +24,10 @@
         <div class="newPicture">
             <h2><?php echo $row['name']; ?></h2>
             <img src="<?php echo $row['name']; ?>" alt="picture<?php echo $row['picture_id']; ?>" />
-            <span class="uploadedBy"><?php echo $row['user_id']; ?></span>
+            <p>
+                <span class="uploadedBy">Uploaded by: <strong><?php echo getAuthor($row['picture_id']); ?></strong></span>
+                <span class="inAlbum">This picture is in album <strong><?php echo getAlbumName($row['picture_id']); ?></strong></span>
+            </p>
         </div>
         <?php
         }
