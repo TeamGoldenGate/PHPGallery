@@ -17,6 +17,7 @@ if (isset($_COOKIE['loggedUser'])) {
                   <option>Friends</option>
                   <option>Work</option>
                   <option>Seas</option>
+                  <option>Natural</option>
                   <option>Models</option>
               </select>
           </span>
@@ -61,7 +62,7 @@ if (isset($_COOKIE['loggedUser'])) {
                     $uploadFilePath = $uploadDir . basename($_FILES['picture']['name'][$i]);
                     $picturename = $_POST['picturename'][$i];
                     if (move_uploaded_file($tmpFilePath, $uploadFilePath)) {
-                        $sql = "INSERT INTO `phpteamwork`.`pictures` ( `name`,`filename`, `album_id`, `user_id`) VALUES ('$picturename', '$uploadFilePath', '$albumId', '$user_id')";
+                        $sql = "INSERT INTO `phpteamwork`.`pictures` ( `name`,`picturename`, `album_id`, `user_id`) VALUES ( '$uploadFilePath', '$picturename', '$albumId', '$user_id')";
                         if (mysqli_query($conn, $sql)) {
                             echo "New record created successfully";
                         } else {
@@ -76,6 +77,7 @@ if (isset($_COOKIE['loggedUser'])) {
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
+        header('Location: index.php');
     }
     ?>
 
