@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 17, 2014 at 09:11 PM
+-- Generation Time: Dec 18, 2014 at 12:39 PM
 -- Server version: 5.6.22
 -- PHP Version: 5.5.9-1ubuntu4.5
 
@@ -26,19 +26,15 @@ CREATE TABLE `albums` (
   `rating` int(11) DEFAULT NULL,
   `category` varchar(50) COLLATE latin1_general_ci NOT NULL,
   `user_id` int(11) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=48 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
 -- Dumping data for table `albums`
 --
 
 INSERT INTO `albums` (`album_id`, `album_name`, `rating`, `category`, `user_id`) VALUES
-(1, 'Christmas Party 2014', 0, 'Family', 2),
-(2, 'Landscape', 0, 'Family', 2),
-(3, 'Sea', 0, 'Family', 2),
-(14, 'Test album', 0, 'Models', 1),
-(15, 'gallery', 0, 'Seas', 9),
-(13, 'Christmas Party 2014 	', 0, 'Family', 1);
+(47, 'Lake', 0, 'Natural', 9),
+(39, 'Animals', 0, 'Natural', 9);
 
 -- --------------------------------------------------------
 
@@ -62,18 +58,21 @@ CREATE TABLE `comments` (
 CREATE TABLE `pictures` (
   `picture_id` int(11) NOT NULL,
   `name` varchar(40) COLLATE latin1_general_ci NOT NULL,
+  `picturename` varchar(200) COLLATE latin1_general_ci NOT NULL,
   `album_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
 -- Dumping data for table `pictures`
 --
 
-INSERT INTO `pictures` (`picture_id`, `name`, `album_id`, `user_id`) VALUES
-(1, 'ChristmasPary2014_album.JPG', 1, 2),
-(2, 'landscape.jpg', 2, 2),
-(3, './images/ChristmasParty2014_album.JPG', 13, 2);
+INSERT INTO `pictures` (`picture_id`, `name`, `picturename`, `album_id`, `user_id`) VALUES
+(4, './images/Koala.jpg', 'Koala', 39, 9),
+(5, './images/Penguins.jpg', '', 39, 9),
+(14, './images/21.jpg', 'Sunset3', 47, 9),
+(13, './images/23.jpg', 'Sunset2', 47, 9),
+(12, './images/12.jpg', 'Sunset', 47, 9);
 
 -- --------------------------------------------------------
 
@@ -141,12 +140,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `albums`
 --
 ALTER TABLE `albums`
-  MODIFY `album_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+  MODIFY `album_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=48;
 --
 -- AUTO_INCREMENT for table `pictures`
 --
 ALTER TABLE `pictures`
-  MODIFY `picture_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `picture_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `users`
 --
