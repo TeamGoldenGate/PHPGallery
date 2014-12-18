@@ -36,8 +36,3 @@ function PreviewImage(sender) {
         document.getElementById("uploadPreview_" + num + "").src = oFREvent.target.result;
     };
 };
-
-
-window.onload = function() {
-    //addClone('addpic');
-}

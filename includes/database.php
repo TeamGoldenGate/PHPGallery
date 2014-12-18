@@ -1,8 +1,13 @@
 <?php
 //Database connection
-$dbhost = "localhost:3306";
-$dbuser = "root";
-$dbpass = "";
+//$dbhost = "localhost:3306";
+//$dbuser = "root";
+//$dbpass = "";
+
+$dbhost = "db4free.net";
+$dbuser = "adminteamwork";
+$dbpass = "password";
+
 $dbname = "phpteamwork";
 
 

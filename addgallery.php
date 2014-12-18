@@ -28,13 +28,6 @@ if (isset($_COOKIE['loggedUser'])) {
               </span>
             </div>
             <div class="row1" id="addpic">
-                <!--              <div id="newpic">-->
-                <!--                  <input type="text" name="picturename[]" placeholder="Picture Name"/>-->
-                <!--                  <input type="file" name="picture[]" id="uploadImage"  onchange="PreviewImage(this);"/>-->
-                <!--                  <a href="#nogo">-->
-                <!--                      <img src="" id="uploadPreview" onClick="removeClone(this, 'newpic', 'addpic')"/>-->
-                <!--                  </a>-->
-                <!--              </div>-->
             </div>
 
             <div class="row1">
@@ -49,18 +42,28 @@ if (isset($_COOKIE['loggedUser'])) {
     if (isset($_POST['galleryname'], $_POST['category']) && $_POST['galleryname'] != "" && $_POST['category'] != "") {
         $galleryName = htmlentities($_POST['galleryname']);
         $category = htmlentities($_POST['category']);
-        $sql = "INSERT INTO `phpteamwork`.`albums` ( `album_name`, `rating`, `category`, `user_id`) VALUES ('$galleryName', '0', '$category', '$user_id')";
-        $albumId = mysqli_query($conn, "SELECT MAX(`album_id`) FROM `phpteamwork`.`albums`");
+        $uploadDir = './images/';
+
+        $sql = "INSERT INTO `phpteamwork`.`albums` ( `album_name`, `pic`, `rating`, `category`, `user_id`) VALUES ('$galleryName', '', '0', '$category', '$user_id')";
+
         if (mysqli_query($conn, $sql)) {
             echo "New record created successfully";
             $albumId = mysqli_insert_id($conn);
-            $uploadDir = './images/';
+
             for ($i = 0; $i < count($_FILES['picture']['name']); $i++) {
                 $tmpFilePath = $_FILES['picture']['tmp_name'][$i];
                 if ($tmpFilePath != "") {
                     $uploadFilePath = $uploadDir . basename($_FILES['picture']['name'][$i]);
                     $picturename = $_POST['picturename'][$i];
                     if (move_uploaded_file($tmpFilePath, $uploadFilePath)) {
+                        if ($i == 0){
+                            $sql ="UPDATE `phpteamwork`.`albums` SET `pic` = '$uploadFilePath' WHERE `albums`.`album_id` = ".$albumId;
+                            if (mysqli_query($conn, $sql)) {
+                                echo "New record created successfully";
+                            } else {
+                                echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                            }
+                        }
                         $sql = "INSERT INTO `phpteamwork`.`pictures` ( `name`,`picturename`, `album_id`, `user_id`) VALUES ( '$uploadFilePath', '$picturename', '$albumId', '$user_id')";
                         if (mysqli_query($conn, $sql)) {
                             echo "New record created successfully";
@@ -76,7 +79,7 @@ if (isset($_COOKIE['loggedUser'])) {
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
-        header('Location: index.php');
+        header('Location: index.php?album='.$albumId);
     }
     ?>
 
