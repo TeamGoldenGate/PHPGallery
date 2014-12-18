@@ -298,3 +298,10 @@ blockquote{border-color: #40403E;}
 .newPicture img {
     max-width: 100%;
 }
+
+.row1 img
+{
+    width: 50px;
+    height: 50px;
+    border: 2px solid #40403E;
+}
